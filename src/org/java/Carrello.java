@@ -44,7 +44,7 @@ public static void main(String[] args) {
 			
 			System.out.println("come si chiama il prodotto ?");
 			nome = in.nextLine();
-			System.out.println("Hai la tessera fedeltà per questo prodotto ?");
+			System.out.println("Hai la tessera fedeltà per questo prodotto (rispondi si o no) ?");
 			tessera = in.nextLine().toLowerCase().equals("si") ? true : false;
 			System.out.println("Scrivi una piccola descrizione ?");
 			descrizione = in.nextLine();
@@ -67,7 +67,7 @@ public static void main(String[] args) {
 				System.out.println("Quanti pollici è?");
 				dimensioni = in.nextInt();
 				in.nextLine();
-				System.out.println("É una smart ?");
+				System.out.println("É una smart (rispondi si o no)?");
 				smartTV = in.nextLine().toLowerCase().equals("si")? true : false ;
 				
 				prodotti[prodotti_length] = new Televisore(nome, descrizione, prezzoBase, IVA, tessera, dimensioni, smartTV);
