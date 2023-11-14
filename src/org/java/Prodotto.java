@@ -9,14 +9,16 @@ public class Prodotto {
 	private String descrizione;
 	private float prezzo;
 	private float IVA;
+	private boolean tessera;
 	
 //	Costruttore
-	public Prodotto(String nome, String descrizione, float prezzo, float IVA ) {
+	public Prodotto(String nome, String descrizione, float prezzo, float IVA, boolean tessera ) {
 		setCodice(codice);
 		setNome(nome);
 		setDescrizione(descrizione);
 		setPrezzoBase(prezzo);
 		setIVA(IVA);
+		setTessera(tessera);
 	}
 	
 //	Getter e setter per il codice
@@ -80,6 +82,18 @@ public class Prodotto {
 		return this.prezzo + this.prezzo * (this.IVA / 100);
 	}
 	
+//	Setter della tessera fedeltà
+	public void setTessera(boolean tessera) {
+		this.tessera = tessera;
+	}
+	
+//	Getter del prezzo in caso di tessera fedeltà
+	public float getPrezzoScontato () {
+		float prezzoScontato = getPrezzo();
+		if(this.tessera) prezzoScontato = getPrezzo() - (getPrezzo()* 2 / 100);
+		return prezzoScontato;
+	}
+	
 //	Metodo per stampare in modo leggibile l'istanza dell'oggetto
 	@Override
 	public String toString() {
@@ -90,8 +104,6 @@ public class Prodotto {
 		+ "Codice completo: " + getCodiceCompleto() + "\n"
 		+ "Codice-Nome : " + getCodiceNome() + "\n"
 		+ "Descrizione: " + getDescrizione() + "\n"
-		+ "Prezzo senza Iva : € " + String.format("%.2f", getPrezzoBase()) + "\n"
-		+ "IVA: " + String.format("%.2f", getIVA()) + "\n"
-		+ "Prezzo con Iva: € " + String.format("%.2f", getPrezzo());
+		+ "Prezzo: € " + String.format("%.2f", getPrezzoScontato());
 	}
 }

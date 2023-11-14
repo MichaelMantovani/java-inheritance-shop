@@ -6,8 +6,8 @@ public class Smartphone extends Prodotto{
 	private int memoria;
 	
 	
-	public Smartphone(String nome, String descrizione, float prezzo, float IVA, String  codiceIMEI , int memoria) {
-		super(nome, descrizione , prezzo , IVA);
+	public Smartphone(String nome, String descrizione, float prezzo, float IVA,boolean tessera, String  codiceIMEI , int memoria) {
+		super(nome, descrizione , prezzo , IVA , tessera);
 		setCodiceIMEI(codiceIMEI);
 		setMemoria(memoria);
 		
@@ -37,7 +37,8 @@ public class Smartphone extends Prodotto{
 	public String toString() {
 		return super.toString() + "\n"
 				+ "Codice IMEI: " + getCodiceIMEI() + "\n" 
-				+ "Memoria del telefono: " + getMemoria()  + "GB";
+				+ "Memoria del telefono: " + getMemoria()  + "GB" + "\n"
+				+ "--------------------------------------";
 	}
 	
 	

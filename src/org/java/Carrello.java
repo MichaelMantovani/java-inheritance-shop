@@ -34,6 +34,7 @@ public static void main(String[] args) {
 			String descrizione; 
 			float prezzoBase;
 			float IVA;
+			boolean tessera;
 			String codiceIMEI;
 			int memoria;
 			int dimensioni;
@@ -43,6 +44,8 @@ public static void main(String[] args) {
 			
 			System.out.println("come si chiama il prodotto ?");
 			nome = in.nextLine();
+			System.out.println("Hai la tessera fedeltà per questo prodotto ?");
+			tessera = in.nextLine().toLowerCase().equals("si") ? true : false;
 			System.out.println("Scrivi una piccola descrizione ?");
 			descrizione = in.nextLine();
 			System.out.println("Qual è il prezzo?");
@@ -57,7 +60,7 @@ public static void main(String[] args) {
 				System.out.println("Quanto memoria ha ?");
 				memoria = Integer.valueOf(in.nextLine());
 				
-				prodotti[prodotti_length] = new Smartphone(nome, descrizione, prezzoBase, IVA, codiceIMEI, memoria);
+				prodotti[prodotti_length] = new Smartphone(nome, descrizione, prezzoBase, IVA, tessera, codiceIMEI, memoria);
 				prodotti_length++;
 				
 			} else if (inputProdotto.equals("televisore")) {
@@ -67,7 +70,7 @@ public static void main(String[] args) {
 				System.out.println("É una smart ?");
 				smartTV = in.nextLine().toLowerCase().equals("si")? true : false ;
 				
-				prodotti[prodotti_length] = new Televisore(nome, descrizione, prezzoBase, IVA, dimensioni, smartTV);
+				prodotti[prodotti_length] = new Televisore(nome, descrizione, prezzoBase, IVA, tessera, dimensioni, smartTV);
 				prodotti_length++;
 				
 			} else  {
@@ -77,7 +80,7 @@ public static void main(String[] args) {
 				System.out.println("Sono wireless o cablate ?");
 				wireless = in.nextLine().toLowerCase().equals("wireless") ? true : false;
 				
-				prodotti[prodotti_length] = new Cuffie(nome, descrizione, prezzoBase, IVA, colore, wireless);
+				prodotti[prodotti_length] = new Cuffie(nome, descrizione, prezzoBase, IVA, tessera , colore, wireless);
 				prodotti_length++;
 			} 
 		}

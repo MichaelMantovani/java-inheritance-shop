@@ -5,8 +5,8 @@ public class Cuffie extends Prodotto {
 	private String colore;
 	private boolean wireless;
 	
-	public Cuffie(String nome, String descrizione, float prezzo, float IVA, String colore, boolean wireless) {
-		super(nome, descrizione , prezzo , IVA);
+	public Cuffie(String nome, String descrizione, float prezzo, float IVA, boolean tessera, String colore, boolean wireless) {
+		super(nome, descrizione , prezzo , IVA, tessera);
 		setColore(colore);
 		setWireless(wireless);
 	}
@@ -32,7 +32,8 @@ public class Cuffie extends Prodotto {
 		
 		return super.toString() + "\n"
 				+ "Colore: " + getColore() + "\n"
-				+ "Caratteristiche: " + (isWireless() ? "Wireless" : "Cablate");
+				+ "Caratteristiche: " + (isWireless() ? "Wireless" : "Cablate")+ "\n"
+				+ "--------------------------------------";
 				
 	}
 	

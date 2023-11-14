@@ -6,8 +6,8 @@ public class Televisore extends Prodotto {
 	private boolean smartTV;
 	
 	
-	public Televisore(String nome, String descrizione, float prezzo, float IVA,int dimensioni,boolean smartTV) {
-		super(nome, descrizione , prezzo , IVA);
+	public Televisore(String nome, String descrizione, float prezzo, float IVA, boolean tessera,int dimensioni,boolean smartTV) {
+		super(nome, descrizione , prezzo , IVA, tessera);
 		setDimensioni(dimensioni);
 		setSmartTV(smartTV);
 	}
@@ -37,7 +37,8 @@ public class Televisore extends Prodotto {
 		
 		return super.toString() + "\n"
 				+ "Dimensione della tv: " + getDimensioni() + " pollici" + "\n" 
-				+ "Caratteristiche: " + (isSmartTV() ? "Smart TV" : "La TV non è smart");
+				+ "Caratteristiche: " + (isSmartTV() ? "Smart TV" : "La TV non è smart") + "\n"
+				 + "--------------------------------------";
 	}
 	
 	}
