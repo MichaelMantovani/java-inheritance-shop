@@ -31,6 +31,12 @@ public class Televisore extends Prodotto {
 	public void setSmartTV(boolean smartTV) {
 		this.smartTV = smartTV;
 	}
+	
+	public float getPrezzoScontato() {
+		float prezzoScontato = super.getPrezzo();
+		if(!this.smartTV) prezzoScontato = super.getPrezzo() - (super.getPrezzo() * 10 / 100);
+		return prezzoScontato;
+	}
 		
 	@Override
 	public String toString() {
