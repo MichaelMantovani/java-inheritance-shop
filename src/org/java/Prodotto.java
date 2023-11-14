@@ -89,7 +89,7 @@ public class Prodotto {
 		+ "Nome: " + getNome() + "\n"
 		+ "Codice completo: " + getCodiceCompleto() + "\n"
 		+ "Codice-Nome : " + getCodiceNome() + "\n"
-		+ "descrizione: " + getDescrizione() + "\n"
+		+ "Descrizione: " + getDescrizione() + "\n"
 		+ "Prezzo senza Iva : € " + String.format("%.2f", getPrezzoBase()) + "\n"
 		+ "IVA: " + String.format("%.2f", getIVA()) + "\n"
 		+ "Prezzo con Iva: € " + String.format("%.2f", getPrezzo());
