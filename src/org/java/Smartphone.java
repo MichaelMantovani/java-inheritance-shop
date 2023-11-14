@@ -33,6 +33,11 @@ public class Smartphone extends Prodotto{
 		this.memoria = memoria;
 	}
 	
+	public float getPrezzoScontato() {
+		float prezzoScontato = super.getPrezzo();
+		if(this.memoria < 32) prezzoScontato = super.getPrezzo() - (super.getPrezzo() * 5 / 100);
+		return prezzoScontato;
+	}
 	@Override
 	public String toString() {
 		return super.toString() + "\n"
