@@ -1,5 +1,6 @@
 package org.java;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Carrello {
@@ -7,11 +8,11 @@ public static void main(String[] args) {
 	Scanner in = new Scanner(System.in);
 	
 	Prodotto[] prodotti = new Prodotto[25];
-
+	int prodotti_length = prodotti.length - prodotti.length;
 	 boolean nuovoProdotto = true;
 	while (nuovoProdotto) {
 		System.out.println("Vuoi inserire un prodotto ?");
-		String risposta = in.nextLine().toLowerCase();
+		String risposta = in.nextLine().toLowerCase().trim();
 		if (risposta.equals("no")) {
 			nuovoProdotto=false; 
 			break; 
@@ -37,9 +38,9 @@ public static void main(String[] args) {
 			String codiceIMEI;
 			int memoria;
 			int dimensioni;
-			String smartTV;
+			boolean smartTV;
 			String colore;
-			String wireless;
+			boolean wireless;
 			
 			System.out.println("come si chiama il prodotto ?");
 			nome = in.nextLine();
@@ -56,25 +57,37 @@ public static void main(String[] args) {
 				in.nextLine(); 
 				System.out.println("Quanto memoria ha ?");
 				memoria = Integer.valueOf(in.nextLine());
+				
+				prodotti[prodotti_length] = new Smartphone(nome, descrizione, prezzoBase, IVA, codiceIMEI, memoria);
+				prodotti_length++;
+				
 			} else if (inputProdotto.equals("televisore")) {
 				System.out.println("Quanti pollici è?");
 				dimensioni = in.nextInt();
 				in.nextLine(); 
 				System.out.println("É una smart ?");
-				smartTV = in.nextLine();
+				smartTV = in.nextLine().toLowerCase().equals("si")? true : false ;
+				
+				prodotti[prodotti_length] = new Televisore(nome, descrizione, prezzoBase, IVA, dimensioni, smartTV);
+				prodotti_length++;
+				
 			} else  {
 				System.out.println("Di che colore sono?");
 				colore = in.nextLine();
 				in.nextLine(); 
 				System.out.println("Sono wireless o cablate ?");
-				wireless = in.nextLine();
+				wireless = in.nextLine().toLowerCase().equals("wireless") ? true : false;
+				
+				prodotti[prodotti_length] = new Cuffie(nome, descrizione, prezzoBase, IVA, colore, wireless);
+				prodotti_length++;
 			} 
 		}
 		
-		
-		
-		
 	}
+	
+	if (prodotti[0] != null)
+	System.out.println(Arrays.asList(prodotti));
+	
 	
 	
 
