@@ -25,7 +25,7 @@ public static void main(String[] args) {
 		String inputProdotto = in.nextLine().toLowerCase();
 		
 	
-			if (!inputProdotto.equals("smartphone") || !inputProdotto.equals("televisore") || !inputProdotto.equals("cuffie")) {
+			if (!inputProdotto.equals("smartphone") && !inputProdotto.equals("televisore") && !inputProdotto.equals("cuffie")) {
 				System.out.println("**Rispondimi soltanto Smartphone, Televisore o Cuffie**");
 				continue;
 			}
