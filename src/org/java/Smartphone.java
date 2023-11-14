@@ -35,17 +35,9 @@ public class Smartphone extends Prodotto{
 	
 	@Override
 	public String toString() {
-		 return "Smarthphone:\n"
-				+ "Codice: " + getCodice() + "\n"
-				+ "Nome: " + getNome() + "\n"
-				+ "Codice completo: " + getCodiceCompleto() + "\n"
-				+ "Codice-Nome : " + getCodiceNome() + "\n"
-				+ "Descrizione: " + getDescrizione() + "\n"
-				+ "Codice IMEI: " + getCodiceIMEI() + "\n"
-				+ "Memoria: " + getMemoria() + "\n"
-				+ "Prezzo senza Iva : € " + String.format("%.2f", getPrezzoBase()) + "\n"
-				+ "IVA: " + String.format("%.2f", getIVA()) + "\n"
-				+ "Prezzo con Iva: € " + String.format("%.2f", getPrezzo());
+		return super.toString() + "\n"
+				+ "Codice IMEI: " + getCodiceIMEI() + "\n" 
+				+ "Memoria del telefono: " + getMemoria()  + "GB";
 	}
 	
 	
