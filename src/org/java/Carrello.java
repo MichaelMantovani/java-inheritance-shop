@@ -84,6 +84,8 @@ public static void main(String[] args) {
 		
 	}
 	
+	in.close();
+	
 	if (prodotti[0] != null)
 	System.out.println(Arrays.asList(prodotti));
 	
