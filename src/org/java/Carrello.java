@@ -30,7 +30,6 @@ public static void main(String[] args) {
 					continue;
 				}
 			
-			
 			String nome; 
 			String descrizione; 
 			float prezzoBase;
@@ -53,8 +52,8 @@ public static void main(String[] args) {
 			
 			if(inputProdotto.equals("smartphone")) {
 				System.out.println("Qual è il suo codice IMEI ?");
-				codiceIMEI = in.nextLine();
-				in.nextLine(); 
+				codiceIMEI = in.next();
+				in.nextLine();
 				System.out.println("Quanto memoria ha ?");
 				memoria = Integer.valueOf(in.nextLine());
 				
@@ -64,7 +63,7 @@ public static void main(String[] args) {
 			} else if (inputProdotto.equals("televisore")) {
 				System.out.println("Quanti pollici è?");
 				dimensioni = in.nextInt();
-				in.nextLine(); 
+				in.nextLine();
 				System.out.println("É una smart ?");
 				smartTV = in.nextLine().toLowerCase().equals("si")? true : false ;
 				
@@ -73,8 +72,8 @@ public static void main(String[] args) {
 				
 			} else  {
 				System.out.println("Di che colore sono?");
-				colore = in.nextLine();
-				in.nextLine(); 
+				colore = in.next(); 
+				in.nextLine();
 				System.out.println("Sono wireless o cablate ?");
 				wireless = in.nextLine().toLowerCase().equals("wireless") ? true : false;
 				
