@@ -8,7 +8,7 @@ public static void main(String[] args) {
 	Scanner in = new Scanner(System.in);
 	
 	Prodotto[] prodotti = new Prodotto[25];
-	int prodotti_length = prodotti.length - prodotti.length;
+	int prodotti_length = 0;
 	 boolean nuovoProdotto = true;
 	while (nuovoProdotto) {
 		System.out.println("Vuoi inserire un prodotto ?");
