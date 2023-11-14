@@ -33,7 +33,7 @@ public class Televisore extends Prodotto {
 	}
 	
 	public float getPrezzoScontato() {
-		float prezzoScontato = super.getPrezzo();
+		float prezzoScontato = super.getPrezzoScontato();
 		if(!this.smartTV) prezzoScontato = super.getPrezzo() - (super.getPrezzo() * 10 / 100);
 		return prezzoScontato;
 	}

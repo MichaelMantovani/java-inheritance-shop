@@ -27,6 +27,12 @@ public class Cuffie extends Prodotto {
 		this.wireless = wireless;
 	}
 	
+	public float getPrezzoScontato() {
+		float prezzoScontato = super.getPrezzoScontato();
+		if(!this.wireless) prezzoScontato = super.getPrezzo() - (super.getPrezzo() * 7 / 100);
+		return prezzoScontato;
+	}
+	
 	@Override
 	public String toString() {
 		
