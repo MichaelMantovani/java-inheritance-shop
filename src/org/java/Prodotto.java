@@ -86,11 +86,16 @@ public class Prodotto {
 	public void setTessera(boolean tessera) {
 		this.tessera = tessera;
 	}
+	
+//	Getter per la tessera fedeltà
+	public boolean hasTessera() {
+		return tessera;
+	}
 
 //	Getter del prezzo in caso di tessera fedeltà
 	public float getPrezzoScontato() {
 		float prezzoScontato = getPrezzo();
-		if (this.tessera)
+		if (this.hasTessera())
 			prezzoScontato = getPrezzo() - (getPrezzo() * 2 / 100);
 		return prezzoScontato;
 	}
