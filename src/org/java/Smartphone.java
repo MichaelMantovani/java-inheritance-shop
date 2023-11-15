@@ -31,7 +31,7 @@ public class Smartphone extends Prodotto {
 
 	public float getPrezzoScontato() {
 		float prezzoScontato = super.getPrezzoScontato();
-		if (this.getMemoria() < 32)
+		if (this.memoria < 32)
 			prezzoScontato = super.getPrezzo() - (super.getPrezzo() * 5 / 100);
 		return prezzoScontato;
 	}

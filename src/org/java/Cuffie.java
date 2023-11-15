@@ -30,7 +30,7 @@ public class Cuffie extends Prodotto {
 
 	public float getPrezzoScontato() {
 		float prezzoScontato = super.getPrezzoScontato();
-		if (!this.isWireless())
+		if (!this.wireless)
 			prezzoScontato = super.getPrezzo() - (super.getPrezzo() * 7 / 100);
 		return prezzoScontato;
 	}
